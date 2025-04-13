@@ -1,4 +1,3 @@
-
 package org.example.lists;
 
 import java.util.ArrayList;
@@ -50,5 +49,30 @@ public class DynamicArrays {
         System.out.println("\n**** Snippet 4: Using contains() to Check for Elements ****");
         System.out.println("Contains 'Virat Kohli': " + cricketers.contains("Virat Kohli"));
         System.out.println("Contains 'MS Dhoni': " + cricketers.contains("MS Dhoni"));
+
+        // *** Difference Between Arrays.asList() and ArrayList ***
+        System.out.println("\n**** Difference Between Arrays.asList() and ArrayList ****");
+        System.out.println("Arrays.asList() creates a fixed-size list backed by the original array. " +
+                "It does not allow adding or removing elements, and attempting to do so will throw an UnsupportedOperationException.");
+        System.out.println("Example: If we try to remove an element from the list created by Arrays.asList(), it will throw an exception.");
+
+        // Demonstrating the difference
+        System.out.println("\nDemonstration:");
+        // Creating a list using Arrays.asList()
+        ArrayList<String> listFromAsList = new ArrayList<>(Arrays.asList("Java", "Python", "C++"));
+        System.out.println("List created by Arrays.asList(): " + listFromAsList);
+
+        // Attempting to modify the list (This works because we're using an ArrayList, which is mutable)
+        listFromAsList.add("JavaScript");
+        System.out.println("After adding 'JavaScript': " + listFromAsList);
+
+        // Now using the same approach with Arrays.asList() directly (not an ArrayList)
+        System.out.println("\nTrying to modify the list from Arrays.asList() directly (not an ArrayList):");
+        String[] techArray = {"Java", "Python", "C++"};
+        java.util.List<String> listFromArray = Arrays.asList(techArray);
+        System.out.println("List created using Arrays.asList(): " + listFromArray);
+
+        // Uncommenting the next line will throw an UnsupportedOperationException
+        // listFromArray.add("JavaScript");  // Throws UnsupportedOperationException
     }
 }
