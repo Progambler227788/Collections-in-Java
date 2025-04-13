@@ -70,7 +70,7 @@ public class DynamicArrays {
         // Now using the same approach with Arrays.asList() directly (not an ArrayList)
         // can't add, but can modify the elements using set and get function
 
-        // Can set only 
+        // Can set only
         System.out.println("\nTrying to modify the list from Arrays.asList() directly (not an ArrayList):");
         String[] techArray = {"Java", "Python", "C++"};
         java.util.List<String> listFromArray = Arrays.asList(techArray);
@@ -83,5 +83,10 @@ public class DynamicArrays {
         // Newer Java versions
         // can't replace even, can't add, can't remove, immutable
         List<Integer> data = List.of(1,2,3,4);
+
+        // Collections has static method like for sorting
+
+        // null is comparator
+        list.sort(null);
     }
 }
