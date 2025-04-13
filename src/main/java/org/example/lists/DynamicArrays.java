@@ -2,6 +2,7 @@ package org.example.lists;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class DynamicArrays {
     public static void main(String[] args) {
@@ -67,6 +68,9 @@ public class DynamicArrays {
         System.out.println("After adding 'JavaScript': " + listFromAsList);
 
         // Now using the same approach with Arrays.asList() directly (not an ArrayList)
+        // can't add, but can modify the elements using set and get function
+
+        // Can set only 
         System.out.println("\nTrying to modify the list from Arrays.asList() directly (not an ArrayList):");
         String[] techArray = {"Java", "Python", "C++"};
         java.util.List<String> listFromArray = Arrays.asList(techArray);
@@ -74,5 +78,10 @@ public class DynamicArrays {
 
         // Uncommenting the next line will throw an UnsupportedOperationException
         // listFromArray.add("JavaScript");  // Throws UnsupportedOperationException
+
+
+        // Newer Java versions
+        // can't replace even, can't add, can't remove, immutable
+        List<Integer> data = List.of(1,2,3,4);
     }
 }
